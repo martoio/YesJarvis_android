@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.herokuapp.httpsyesjarvis1.yesjarvis.freebie.FreebieActivity">
+
+    <Button
+        android:text="Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        app:layout_constraintRight_toRightOf="@+id/fragment_container_freebie"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline5"/>
+
+    <Button
+        android:text="Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2"
+        app:layout_constraintLeft_toLeftOf="@+id/fragment_container_freebie"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guideline5"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"/>
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="659dp"
+        android:id="@+id/guideline5"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="206dp"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <TextView
+        android:text="Select a service to try"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guideline5"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline5"
+        android:layout_marginTop="16dp"/>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                 android:layout_height="0dp"
+                 android:layout_width="0dp"
+                 android:id="@+id/single_fragment_container"
+                 app:layout_constraintBottom_toTopOf="@+id/guideline6"
+                 app:layout_constraintTop_toBottomOf="@+id/textView4"
+                 android:layout_marginTop="8dp"
+                 app:layout_constraintRight_toRightOf="parent"
+                 app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <android.support.constraint.Guideline
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline6"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteY="599dp"
+        tools:layout_editor_absoluteX="0dp"
+        app:layout_constraintGuide_percent="0.90895295"/>
+
+</android.support.constraint.ConstraintLayout>

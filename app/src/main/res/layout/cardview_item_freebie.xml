@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:id="@+id/card_view_item_freebie"
+    style="@style/CardView.Unselected"
+    >
+    <!--TODO: Try compound drawable alternative here -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:maxHeight="36dp"
+            android:adjustViewBounds="true"
+            android:id="@+id/freebie_card_icon"
+            android:layout_weight="1"
+            android:src="@drawable/bed_icon_light_green"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/freebie_card_text"
+            android:textSize="28sp"
+            android:paddingLeft="8dp"
+            android:layout_weight="3"
+            android:text="Service"
+            />
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/freebie_card_check"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:srcCompat="@drawable/ic_check_mark"
+            android:visibility="invisible"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>

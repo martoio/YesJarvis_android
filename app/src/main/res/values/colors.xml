@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#72c9c0</color>
+    <color name="colorPrimaryDark">#06181a</color>
+    <color name="colorAccent">#ff5c5d</color>
+
+    <color name="jarvis_light_green">@color/colorPrimary</color>
+    <color name="jarvis_dark_green">@color/colorPrimaryDark</color>
+    <color name="jarvis_red">@color/colorAccent</color>
+
+    <color name="white">#fff</color>
+    <color name="gray">#ccc</color>
+    <color name="black">#000</color>
+
+    <!-- CardView colors for freebie page -->
+
+</resources>

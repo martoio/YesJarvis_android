@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    >
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/get_jarvis_ripple_container"/>
+
+    <!-- divider -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintRight_toLeftOf="@+id/guideline7"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline7"
+        app:layout_constraintBottom_toTopOf="@+id/get_jarvis_ripple_container"
+        android:layout_marginBottom="8dp">
+
+        <ImageView
+            android:id="@+id/intro_indicator_0"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/indicator_selected"/>
+
+        <ImageView
+            android:id="@+id/intro_indicator_1"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/indicator_unselected"/>
+
+        <ImageView
+            android:id="@+id/intro_indicator_2"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/indicator_unselected"/>
+        <!-- Your other 2 indicators here -->
+    </LinearLayout>
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/get_jarvis_ripple_container"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:mrl_rippleAlpha="0.2"
+        app:mrl_rippleColor="@color/white"
+        app:mrl_rippleHover="true"
+        app:mrl_rippleOverlay="true">
+        <customfonts.JarvisTextView
+            android:text="@string/onboarding_button_get_jarvis"
+            android:id="@+id/textview_get_jarvis"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            style="@style/AppTheme.JarvisActionButton.Colored"
+            />
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline7"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="206dp"
+        app:layout_constraintGuide_percent="0.5"/>
+
+
+</android.support.constraint.ConstraintLayout>

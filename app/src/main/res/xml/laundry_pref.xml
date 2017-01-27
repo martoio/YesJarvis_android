@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--TODO: Implement concrete preference classes here in order to make the stuff actually work: -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="General">
+        <SwitchPreference
+            android:title="Enabled"
+            android:key="enabled_switch_pref"
+            android:summary="Whether you are registered for this service"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Category 2">
+        <EditTextPreference
+            android:key="key2"
+            android:title="Notes here"
+            android:summary="Some text"
+            />
+
+    </PreferenceCategory>
+</PreferenceScreen>

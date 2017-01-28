@@ -160,20 +160,24 @@ public class RegisterFragment extends Fragment implements Response.Listener, Res
         if (error.networkResponse != null && error.networkResponse.data != null){
             int statusCode = error.networkResponse.statusCode;
             byte[] response = error.networkResponse.data;
+            Snackbar snackbar;
+
             switch (statusCode){
                 case 400:
+                    snackbar = Snackbar.make(mRoot, "Error: please check the input", Snackbar.LENGTH_LONG);
                     break;
                 case 409:
-                    Snackbar snackbar = Snackbar.make(mRoot, "Email associated with another user", Snackbar.LENGTH_LONG);
-                    TextView tv = (TextView)snackbar.getView().findViewById(android.support.design.R.id.snackbar_text);
-                    tv.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
-                    snackbar.show();
+                    snackbar = Snackbar.make(mRoot, "Email already registered. Login or contact support", Snackbar.LENGTH_LONG);
                     break;
                 default:
-                    Toast.makeText(getActivity().getApplicationContext(), new String(response), Toast.LENGTH_LONG).show();
+                    snackbar = Snackbar.make(mRoot, "An error occurred, please try again", Snackbar.LENGTH_LONG);
                     Log.d(REGISTER_TAG, new String(response));
                     break;
             }
+
+            TextView tv = (TextView)snackbar.getView().findViewById(android.support.design.R.id.snackbar_text);
+            tv.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
+            snackbar.show();
         }
 
         enableButton();
@@ -243,18 +247,18 @@ public class RegisterFragment extends Fragment implements Response.Listener, Res
     /**
      * Utility class for validating input
      */
-    private static class Validator{
+    public static class Validator{
 
         //checks if an email is valid;
-        private static boolean isValidEmail(String email){
+        static boolean isValidEmail(String email){
             return Patterns.EMAIL_ADDRESS.matcher(email).matches();
         }
         //checks if a password is valid;
-        private static boolean isValidPassword(String password){
+        static boolean isValidPassword(String password){
             return (password.length() > 4 && password.length() < 20);
         }
         //checks if 2 passwords match;
-        private static boolean isValidPasswordConfirm(String p1, String p2){
+        static boolean isValidPasswordConfirm(String p1, String p2){
             return p1.equals(p2) && isValidPassword(p2);
         }
 

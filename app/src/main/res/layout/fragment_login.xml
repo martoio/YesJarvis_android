@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.herokuapp.httpsyesjarvis1.yesjarvis.RegisterActivity">
+    tools:context="com.herokuapp.httpsyesjarvis1.yesjarvis.RegisterActivity"
+    android:id="@+id/login_root">
 
 
     <android.support.design.widget.TextInputLayout

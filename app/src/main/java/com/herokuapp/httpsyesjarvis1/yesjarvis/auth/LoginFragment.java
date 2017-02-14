@@ -1,6 +1,7 @@
 package com.herokuapp.httpsyesjarvis1.yesjarvis.auth;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
@@ -12,16 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.herokuapp.httpsyesjarvis1.yesjarvis.R;
-import com.herokuapp.httpsyesjarvis1.yesjarvis.networking.CustomJsonRequest;
-
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.herokuapp.httpsyesjarvis1.yesjarvis.dashboard.DashboardActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -80,6 +76,9 @@ public class LoginFragment extends Fragment implements Response.Listener, Respon
     }
 
     private void login(){
+        Intent intent = new Intent(getActivity(), DashboardActivity.class);
+        startActivity(intent);
+        /*
         resetErrors();
 
         final String email = mEmail.getText().toString();
@@ -98,6 +97,7 @@ public class LoginFragment extends Fragment implements Response.Listener, Respon
         }
 
         CustomJsonRequest request = new CustomJsonRequest(Request.Method.POST, LOGIN_ENDPOINT, requestParams, this, this);
+        */
     }
     @Override
     public void onErrorResponse(VolleyError error) {
@@ -106,7 +106,8 @@ public class LoginFragment extends Fragment implements Response.Listener, Respon
 
     @Override
     public void onResponse(Object response) {
-
+        Intent intent = new Intent(getActivity(), DashboardActivity.class);
+        startActivity(intent);
     }
     //Disables the Login "button" to avoid a flood of requests;
     private void disableButton(){
